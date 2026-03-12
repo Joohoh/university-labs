@@ -6,12 +6,14 @@ de 30% do preço de fábrica, fazer um programa para ler o
 custo de fábrica de um carro e imprimir o custo ao
 consumidor. */
 
+function calcularCustoCarroConsumidor(custoFabrica){
+    const resultado = custoFabrica + (custoFabrica * 0.12) + (custoFabrica * 0.30);
+    return resultado;
+}
+
 const prompt = require("prompt-sync")();
+const custoFabrica = Number(prompt("Digite o valor de custo do veículo: R$ "));
 
-const custoDeFabrica = Number(prompt("Digite o custo de fábrica do carro: "));
-const porcentagemDoDistribuidor = 0.12;
-const impostos = 0.30;
+const custoFinal = calcularCustoCarroConsumidor(custoFabrica);
 
-const custoAoConsumidor = custoDeFabrica + (custoDeFabrica * porcentagemDoDistribuidor) + (custoDeFabrica * impostos);
-
-console.log(`O custo ao consumidor do carro é: ${custoAoConsumidor.toFixed(2)}`);
+console.log(`O custo final é de: R$ ${custoFinal}`);
