@@ -2,11 +2,15 @@
 fazer um programa que calcule e escreva o seu volume. 
 VOLUME =1/3 * BASE * ALTURA */
 
+function calcularVolume(base, altura){
+    const volume = base * altura / 3;
+    return volume;
+}
+
 const prompt = require("prompt-sync")();
+const b = Number(prompt("Digite o valor da base: "));
+const a = Number(prompt("Digite o valor da altura: "));
 
-const base = prompt("Digite o valor da base de uma pirâmide: ");
-const altura = prompt("Digite o valor da altura de uma pirâmide: ");
+const volume = calcularVolume(b, a);
 
-const volume = (base * altura) / 3;
-
-console.log(`O volume dessa pirâmide é: ${volume.toFixed(1)}`)
+console.log(`O volume da pirâmide é de: ${volume}`);
