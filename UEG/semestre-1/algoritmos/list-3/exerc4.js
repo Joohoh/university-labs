@@ -9,11 +9,16 @@ valor da prestação = valor da prestação a ser paga;
 taxa de juros = valor do juro cobrado pelo atraso;
 tempo de atraso = quantidade de dias em atraso; */
 
+function calcularPrestacaoAtrasada(valorPrestacao, taxaJuros, tempoAtraso){
+    const resultado = valorPrestacao + (valorPrestacao * (taxaJurosDecimal / 100) * tempoAtraso);
+    return resultado;
+}
+
 const prompt = require("prompt-sync")();
+const valPrestacao = Number(prompt("Digite o valor da prestação atual: R$ "));
+const txJuros = Number(prompt("Digite o valor da taxa de juros: "));
+const tempAtraso = Number(prompt("Digite o tempo de atraso: "));
 
-const valorDaPrestacao = Number(prompt("Digite o valor da prestação a ser paga: R$ "));
-const taxaDeJuros = Number(prompt("Digite a taxa de juros mensal: "));
-const tempoDeAtraso = Number(prompt("Digite a quantidade de dias em atraso: "));
+const valorFinalPrestacao = calcularPrestacaoAtrasada(valPrestacao, txJuros, tempAtraso);
 
-const valorAtualizadoDaPrestacao = valorDaPrestacao + (valorDaPrestacao * (taxaDeJuros/100) * tempoDeAtraso);
-console.log(`O valor atualizado da prestação é de: R$ ${valorAtualizadoDaPrestacao.toFixed(2)}`);
+console.log(`O valor da parcela atualizada é de: R$ ${valorFinalPrestacao}`);
