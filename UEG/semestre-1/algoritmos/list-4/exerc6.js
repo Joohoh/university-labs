@@ -1,17 +1,35 @@
 /* Escrever um programa que leia um número de 3 dígitos e o
 inverta, escrevendo o número lido e o invertido. */
 
+function inverterNumeros(numero){
+    const centenas = Math.floor(numero / 100); 
+    const dezenas = Math.floor((numero % 100) / 10); 
+    const unidades = numero % 10; 
+    const numeroInvertido = (unidades * 100) + (dezenas * 10) + centenas;
+    return numeroInvertido;
+}
+
 const prompt = require("prompt-sync")();
+const num = parseInt(prompt("Digite um número inteiro de 3 dígitos: "));
 
-const numero = Number(prompt("Digite um número de 3 dígitos: "));
+const numInvertido = inverterNumeros(num);
 
-const centenas = Math.floor(numero / 100); // Math.floor é usado para arredondar para baixo, garantindo que obtenhamos apenas a parte inteira.  
-const dezenas = Math.floor((numero % 100) / 10); // O operador % é usado para obter o resto da divisão, que nos dá os últimos dois dígitos do número. Em seguida, dividimos por 10 para obter a parte das dezenas.
-const unidades = numero % 10; // O operador % é usado novamente para obter o último dígito do número, que representa as unidades.
-const numeroInvertido = (unidades * 100) + (dezenas * 10) + centenas; 
-// Para inverter o número, multiplicamos as unidades por 100, as dezenas por 10 e somamos tudo para obter o número invertido.
+console.log(`O número invertido é: ${numInvertido} e o número original era: ${num}`);
 
-console.log(`O número lido é: ${numero} e o número invertido é: ${String(numeroInvertido).padStart(3, '0')}`);
+/* function inverterNumero(valor){
+    let numeroI = valor % 10;
+    valor = Math.trunc (valor / 10);
+    numeroI = numeroI * 10 + valor % 10;
+    valor = Math.trunc (valor / 10);
+    numeroI = numeroI * 10 * valor;
+    return numeroI;
+}
 
-// pad.Start(3, '0') é para garantir que o número invertido tenha 3 dígitos, mesmo que o número original tenha zeros à esquerda.
-// String(numeroInvertido) é para converter o número invertido em string, permitindo o uso do padStart.
+const prompt = require("prompt-sync")();
+const numero = Number(prompt("Numero: "));
+let auxiliar = numero;
+let numeroInvertido = inverterNumero(auxiliar);
+
+console.log(`Numero original ${numero}`);
+console.log(`Numero invertido`);
+*/
