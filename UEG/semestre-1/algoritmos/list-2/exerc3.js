@@ -2,14 +2,16 @@
 a média final deste. Considerar que a média é ponderada e
 que o peso das notas é: 2,3 e 5, respectivamente. */
 
+function calcularMediaPonderada(nota1, nota2, nota3){
+    const media = (nota1 * 2 + nota2 * 3 + nota3 * 5) / 10;
+    return media;
+}
+
 const prompt = require("prompt-sync")();
+const nota1 = Number(prompt("Digite a primeira nota: "));
+const nota2 = Number(prompt("Digite a segunda nota: "));
+const nota3 = Number(prompt("Digite a terceira nota: "));
 
-const nota1 = prompt("Digite a 1ª nota: ");
-const nota2 = prompt("Digite a 2ª nota: ");
-const nota3 = prompt("Digite a 3ª nota: ");
+const mediaPonderada = calcularMediaPonderada(nota1, nota2, nota3);
 
-const peso = 2 + 3 + 5
-
-const media = (nota1 * 2 + nota2 * 3 + nota3 * 5) / peso;
-
-console.log(`Sua média é: ${media.toFixed(1)}`);
+console.log(`O valor da nota é: ${mediaPonderada}`);
