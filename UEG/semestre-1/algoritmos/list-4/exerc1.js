@@ -12,12 +12,17 @@ C = coeficiente de rugosidade.
 
 Dados entrados via teclado. */
 
+function calcularPerdaCarga(vazao, diametroTubo, coeficienteRugosidade){
+    const resultado = (vazao ** 1.85) * 10.643 * (diametroTubo ** 4.87) * (coeficienteRugosidade ** -1.85);
+    return resultado; 
+}
+
 const prompt = require("prompt-sync")();
 
-const vazao = Number(prompt("Digite o valor de vazão: "));
-const diametroDoTubo = Number(prompt("Digite o diâmetro do tubo: "));
-const coeficienteDeRugosidade = Number(prompt("Digite o coeficiente de rugosidade: "));
+const vazao = Number(prompt("Digite o valor da vazão: "));
+const diametroTubo = Number(prompt("Digite o valor do diâmetro do tubo: "));
+const coedicienteRugosidade = Number(prompt("Digite o coeficiente de rugosisade: "));
 
-const perdaDeCarga = (vazao ** 1.85) * 10.643 * (diametroDoTubo ** -4.87) * (coeficienteDeRugosidade ** -1.85);
+const perdaCarga = calcularPerdaCarga(vazao, diametroTubo, coedicienteRugosidade);
 
-console.log(`A perda de carga é: ${perdaDeCarga.toFixed(5)}`);
+console.log(`A perda de carga é de: ${perdaCarga.toFixed(2)}`);
