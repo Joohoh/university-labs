@@ -4,22 +4,13 @@ futebol e forneça a renda total do jogo, sabendo-se que havia
 R$5,00, geral - 50% a R$10,00, arquibancada - 30% a
 R$20,00 e cadeiras - 10% a R$40,00.*/
 
+function calcularPublicoTotal(totalPublico){
+    const resultado = ((totalPublico * 0.10) * 5.0) + ((totalPublico * 0.50) * 10) + ((totalPublico * 0.30) * 20) + ((totalPublico * 0.10) * 40);
+    return resultado
+}
+
 const prompt = require("prompt-sync")();
+const totalPublico = Number(prompt("Digite o valor do público total: "));
+const rendaTotal = calcularPublicoTotal(totalPublico);
 
-const publicoTotal = Number(prompt("Digite o total de pessoas: "));
-
-// Calculo da porcentagem e separação de pessoas
-const qtPopular = publicoTotal * 0.10;
-const qtGeral = publicoTotal * 0.50;
-const qtArquibancada = publicoTotal * 0.30;
-const qtCadeiras = publicoTotal * 0.10;
-
-// Calculo da quantidade de publicos já separada e multiplicação com os valores de cada ingresso
-const ingressoPopular = qtPopular * 5.00;
-const ingressoGeral = qtGeral * 10.00;
-const ingressoArquibancada = qtArquibancada * 20.00;
-const ingressoCadeiras = qtCadeiras * 40.00;
-
-const rendaTotal = ingressoPopular + ingressoGeral + ingressoArquibancada + ingressoCadeiras;
-
-console.log(`O rendimento total foi de: R$ ${rendaTotal.toFixed(2)}`)
+console.log(`O valor total de rendimentos é de: R$ ${rendaTotal}`);
