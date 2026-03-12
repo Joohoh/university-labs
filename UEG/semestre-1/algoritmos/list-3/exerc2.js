@@ -11,15 +11,18 @@ Sabe-se que o salário total é o fixo mais as comissões.
 Escrever um programa que calcule e escreva o salário total do
 empregado. */
 
+function calcularSalario(salario, quantidadeTVLCD, quantidadeTVLED, quantidadeTVPlasma){
+    const resultado = salario + tvLCD * 50 + tvLED * 60 + tvPlasma * 55;
+    return resultado; 
+}
+
 const prompt = require("prompt-sync")();
 
-const salario = Number(prompt("Qual o salário fixo? "));
-const vendaTVLCD = Number(prompt("Quantas unidades de TV LCD foram vendidas? "));
-const vendaTVLED = Number(prompt("Quantas TV LED foram vendidas? "));
-const vendaTVPlasma = Number(prompt("Quantas TV Plasma foram vendidas? "));
+const salario = Number(prompt("Digite o valor do salário: R$ "));
+const tvLCD = Number(prompt("Digite quantas TV LCD foram vendidas nesse mês: "));
+const tvLED = Number(prompt("Digite quantas TV LED foram vendidas nesse mês: "));
+const tvPlasma = Number(prompt("Digite quantas TV Plasma foram vendidas nesse mês: "));
 
-const salariofinal = ((vendaTVLCD * 50) + (vendaTVLED * 60) + (vendaTVPlasma * 55)) + salario;
+const salariofinal = calcularSalario(salario, tvLCD, tvLED, tvPlasma);
 
-console.log(`TV LCD ${vendaTVLCD}`);
-
-console.log(`Seu salário final é R$ ${salariofinal}`);
+console.log(`O valor do salario fixo é de: R$ ${salariofinal.toFixed(2)}`);
