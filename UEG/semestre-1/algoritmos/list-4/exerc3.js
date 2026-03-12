@@ -8,16 +8,14 @@ da lata (em metros). Área da lata = área da base(π * raio
 + área do lado(2 * π * raio * altura). Considere o preço do
 alumínio por m2 como sendo uma constante.*/
 
-const prompt = require("prompt-sync")();
+function calcularValorLatas(raio, altura){
+    const resultado = ((Math.PI * raio ** 2 * 2) + (2 * Math.PI * raio * altura)) * 155.00;
+    return resultado; 
+}
 
+const prompt = require("prompt-sync")();
 const raio = Number(prompt("Digite o valor do raio da lata: "));
 const altura = Number(prompt("Digite o valor da altura da lata: "));
+const valorLata = calcularValorLatas(raio, altura);
 
-const areaDaBase = Math.PI * raio ** 2 * 2;
-const areaDoLado = 2 * Math.PI * raio * altura;
-
-const areaTotal = areaDaBase + areaDoLado;
-
-const custo = areaTotal * 155.00;
-
-console.log(`O custo de uma lata cilíndrica de alumínio com essas especificações é de: R$ ${custo.toFixed(2)}`);
+console.log(`O valor da lata é de: R$ ${valorLata.toFixed(2)}`);
