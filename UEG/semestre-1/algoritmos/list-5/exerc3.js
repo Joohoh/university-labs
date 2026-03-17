@@ -1,3 +1,9 @@
+/* Fazer um algoritmo que obtenha o raio e a altura de um
+cilindro e que calcule e escreva o seu volume e sua área. 
+ÁREA  = 2 * π * raio * (altura + raio)
+VOLUME = π * raio² * altura
+ */
+
 function calcularVolume(raio, altura){
     const area = 2 * Math.PI * raio * (altura + raio);
     const volume = Math.PI * raio ** 2 * altura;

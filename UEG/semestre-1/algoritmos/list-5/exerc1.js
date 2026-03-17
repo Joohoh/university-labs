@@ -1,3 +1,6 @@
+/* Faça um algoritmo que leia a idade de uma pessoa expressa
+em anos, meses e dias e mostre-a expressa apenas em dias. */
+
 function calcularIdadeDias(idadeAnos, idadeMeses, idadeDias){
     const resultado = (idadeAnos * 365) + (idadeMeses * 12) + (idadeDias * 30);
     return resultado;

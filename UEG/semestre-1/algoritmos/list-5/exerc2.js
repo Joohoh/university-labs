@@ -1,3 +1,7 @@
+/* Faça um algoritmo que leia o tempo de duração de um evento
+em uma fábrica expressa em segundos e mostre-o expresso
+em horas, minutos e segundos. */
+
 function calcularTempoDuracaoEvento(tempoEventoSegundos){
     const minutos = tempoEventoSegundos / 60;
     const horas = minutos / 60;
