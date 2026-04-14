@@ -37,7 +37,11 @@ function calcularCustoPulverizacao(nome, tipo, area){
     
     if(area > 350) {
         valorTotal * 0.95}
-       
+    if(valorTotal > 10750) {
+        valorTotal = valorTotal - ((valorTotal - 10750) * 0.10)
+    }
+
+    return `O fazendeiro ${nome} deve pagar R$ ${valorTotal.toFixed(2)}`
 }
 
 const prompt = require("prompt-sync")();
@@ -46,21 +50,19 @@ let opcao = "S";
 
 do{
 
-    const nomeFazendeiro = (prompt("Digite o nome do Fazendeiro: "));
+    const nomeFazendeiro = prompt("Digite o nome do Fazendeiro: ");
     
-    console.log("Qual o tipo de praga? \n" + 
-    "Tipo 1: pulverização contra ervas daninhas \n" +
-    "Tipo 2: pulverização contra gafanhotos\n" +
-    "Tipo 3: pulverização contra broca, R$ 150,00 por acre;\n" +
-    "Tipo 4: pulverização contra tudo acima, R$ 250,00 por acre"
-    );
+    console.log("Qual o tipo de praga?");
+    console.log("1: Ervas daninhas | 2: Gafanhotos | 3: Broca | 4: Todos");
 
     const tipoPulverizacao = Number(prompt("Opção: "));
- 
-    const areaPulverizacao = Number(prompt("Qual a área a ser pulverizada (Em acres)? "));
+    const areaPulverizacao = Number(prompt("Qual a área a ser pulverizada (em acres)? "));
 
-    console.log(`Valor final do filme:  ${calcularAluguelFilme(valorBaseDoFilme, categoria, diaDaSemana)}`);
-    opcao = prompt("Deseja continuar? [S,N]: ").toUpperCase();
+    // Chama a função correta e imprime o retorno dela
+    const resultado = calcularCustoPulverizacao(nomeFazendeiro, tipoPulverizacao, areaPulverizacao);
+    console.log(`${resultado}`);
+
+    opcao = prompt("Deseja continuar? [S/N]: ").toUpperCase();
 
 }while(opcao === "S")
     if(opcao === "N") return console.log("Programa encerrado!");
