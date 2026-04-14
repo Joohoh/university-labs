@@ -13,10 +13,15 @@ Obs.: Usuário ideal - ele não irá digitar valores incorretos. */
 
 function calcularTarifa(saldo){
     const saldoMensal = saldo / 6
-    if(saldoMensal <= 1000) return "tarifa bancária tipo Básica de R$ 25,00."
-    if(saldoMensal <= 2000) return "tarifa bancária tipo Prata de R$ 20,00."
-    if(saldoMensal <= 3500) return "tarifa bancária tipo Ouro de R$ 13,00."
-    return "tarifa bancária tipo Prêmio isenta."
+    //if(saldoMensal <= 1000) return "tarifa bancária tipo Básica de R$ 25,00."
+    //if(saldoMensal <= 2000) return "tarifa bancária tipo Prata de R$ 20,00."
+    //if(saldoMensal <= 3500) return "tarifa bancária tipo Ouro de R$ 13,00."
+    //return "tarifa bancária tipo Prêmio isenta."
+
+    if(saldoMensal < 1000) return "tarifa bancária tipo Básica de R$ 25,00."
+    else if(saldoMensal <= 2000) return "tarifa bancária tipo Prata de R$ 20,00."
+        else if(saldoMensal <= 3500) return "tarifa bancária tipo Ouro de R$ 13,00."
+            else return "tarifa bancária tipo Prêmio isenta."
 }
 
 const prompt = require("prompt-sync")();

@@ -11,10 +11,23 @@ Código Condições de Pagamento
 
 function calcularValor(preco, condicao){
 
-    if(condicao === 1) return preco * 0.90;
-    if(condicao === 2) return preco * 0.95;
-    if(condicao === 3) return preco / 2;
-    if(condicao === 4) return (preco * 1.10) / 3;
+   // if(condicao === 1) return preco * 0.90;
+   // if(condicao === 2) return preco * 0.95;
+   // if(condicao === 3) return preco / 2;
+   // if(condicao === 4) return (preco * 1.10) / 3;
+   
+   if(condicao === 1) return preco * 0.90;
+   else if(condicao === 2) return preco * 0.95;
+        else if(condicao === 3) return preco / 2;
+            else return (preco * 1.10) / 3;
+
+   //switch(condicao){
+   //     case 1: return preco * 0.90;
+   //     case 2: return preco * 0.95;
+   //     case 3: return preco / 2;
+   //     case 4: return (preco * 1.10) / 3;
+   // }
+
 }
 
 const prompt = require("prompt-sync")();

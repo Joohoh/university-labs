@@ -17,13 +17,13 @@ function calcularValorCarro(precoInicial) {
         total = total + 800.00;
     }
     if (prompt("Vidro Elétrico? (S/N): ") === "S") {
-        total = total + 1200.00;
+       total = total + 1200.00;
     }
     if (prompt("Direção Hidráulica? (S/N): ") === "S") {
         total = total + 2000.00;
     }
-
     return total;
+
 }
 
 const prompt = require("prompt-sync")();

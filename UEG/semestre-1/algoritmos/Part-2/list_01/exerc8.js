@@ -11,9 +11,19 @@ Combustível Preço por Litro
 
 function calcularValorCombustivel(tipoCombustivel, quantidadeLitros){
     
+    // if(tipoCombustivel === 1) return "O valor em litros do Álcool é de: R$ " + quantidadeLitros * 4.805;
+    // if(tipoCombustivel === 2) return "O valor em litros do Diesel é de: R$ " + quantidadeLitros * 5.953;
+    // if(tipoCombustivel === 3) return "O valor em litros da Gasolina é de: R$ " + quantidadeLitros * 6.565;
+
     if(tipoCombustivel === 1) return "O valor em litros do Álcool é de: R$ " + quantidadeLitros * 4.805;
-    if(tipoCombustivel === 2) return "O valor em litros do Diesel é de: R$ " + quantidadeLitros * 5.953;
-    if(tipoCombustivel === 3) return "O valor em litros da Gasolina é de: R$ " + quantidadeLitros * 6.565;
+    else if(tipoCombustivel === 2) return "O valor em litros do Diesel é de: R$ " + quantidadeLitros * 5.953;
+        else return "O valor em litros da Gasolina é de: R$ " + quantidadeLitros * 6.565;
+
+    // switch(tipoCombustivel){
+    //     case 1: return "O valor em litros do Álcool é de: R$ " + quantidadeLitros * 4.805;
+    //     case 2: return "O valor em litros do Diesel é de: R$ " + quantidadeLitros * 5.953;
+    //     case 3: return "O valor em litros da Gasolina é de: R$ " + quantidadeLitros * 6.565;
+    // }
 }
 
 const prompt = require("prompt-sync")();

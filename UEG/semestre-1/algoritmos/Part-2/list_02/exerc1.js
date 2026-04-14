@@ -7,6 +7,9 @@ Obs.: Usuário ideal - ele não irá digitar valores incorretos. */
 function calcularQuadradoPerfeito(numero){
     if(Math.sqrt(numero) % 1 === 0) return "O número " + numero + " é um quadrado perfeito.";
     else return "O número " + numero + " não é um quadrado perfeito.";
+
+    // if(Math.sqrt(numero) % 1 === 0) return "O número " + numero + " é um quadrado perfeito.";
+    // if(Math.sqrt(numero) % 1 !== 0) return "O número " + numero + " não é um quadrado perfeito.";
 }
 
 const prompt = require("prompt-sync")();
