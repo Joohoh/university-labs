@@ -2,21 +2,21 @@
 determine e imprima a soma dos três menores. */
 
 function somarTresMenores(n1, n2, n3, n4) {
-    let maior = n1;
+    let numMaior = n1;
 
-    if (n2 > maior) {
-        maior = n2;
+    if (n2 > numMaior) {
+        numMaior = n2;
     }
-    if (n3 > maior) {
-        maior = n3;
+    if (n3 > numMaior) {
+        numMaior = n3;
     }
-    if (n4 > maior) {
-        maior = n4;
+    if (n4 > numMaior) {
+        numMaior = n4;
     }
 
 
     const somaTotal = n1 + n2 + n3 + n4;
-    const resultado = somaTotal - maior;
+    const resultado = somaTotal - numMaior;
 
     return resultado;
 }

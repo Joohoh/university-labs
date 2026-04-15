@@ -22,7 +22,7 @@ function calcularDosagemMedicamento(tipo){
         case 1: return "Bebê 600mg - " + "Quantidade em ml: " 
         +  (gotasMg * 600).toFixed(0);
         case 2: return "Adolescente 1600 mg - " + " Quantidade em ml: " 
-        + (gotasMg * 1600).toFixed(0);
+        + (gotasMg * 1600).toFixed(0); 
         case 3: return "Adulto 4600 mg - " + "Quantidade em ml: " 
         + (gotasMg * 4600).toFixed(0);
         case 4: return "Idoso 2450 mg - " + "Quantidade em ml: " 

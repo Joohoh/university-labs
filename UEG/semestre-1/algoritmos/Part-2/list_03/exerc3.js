@@ -13,28 +13,25 @@ o preço final que será pago pela locação do filme. */
 
 function calcularAluguelFilme(precoBase, categoria, diaDaSemana){
     let precoAux = precoBase;
+    let precoAcrescimo = 0;
 
     switch(Number(diaDaSemana)){
-        
-        case 1: precoAux = precoBase;
-        break;
-        case 2: precoAux = precoBase * 0.60; 
-        break;
-        case 3: precoAux = precoBase * 0.60; 
-        break;
-        case 4: precoAux = precoBase;
-        break; 
-        case 5: precoAux = precoBase * 0.60; 
-        break;
-        case 6: precoAux = precoBase;
-        break;
-        case 7: precoAux = precoBase;
-        break;
-
+        case 2: 
+        case 3: 
+        case 5: 
+            precoAux = precoBase * 0.60; 
+            break;
+        default: 
+            precoAux = precoBase;
     }
-        if(categoria === 2) {precoAux = precoAux * 1.15;} 
-        return precoAux.toFixed(2)
 
+    if(categoria === 2) {
+        precoAcrescimo = precoBase * 0.15;
+    } 
+
+    precoAux = precoAux + precoAcrescimo;
+    
+    return precoAux.toFixed(2);
 }
 
 const prompt = require("prompt-sync")();
